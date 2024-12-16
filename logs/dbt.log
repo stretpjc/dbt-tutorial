@@ -1,0 +1,1130 @@
+[0m10:37:48.391171 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108a6dcd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108a8b020>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108a8acf0>]}
+
+
+============================== 10:37:48.394009 | bb4a7f64-cd0e-4e32-9eea-76196338e82b ==============================
+[0m10:37:48.394009 [info ] [MainThread]: Running with dbt=1.9.0
+[0m10:37:48.394301 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/Users/pedro.mora/jaffle_shop1/logs', 'debug': 'False', 'profiles_dir': '/Users/pedro.mora/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m10:37:48.402229 [info ] [MainThread]: dbt version: 1.9.0
+[0m10:37:48.402411 [info ] [MainThread]: python version: 3.12.5
+[0m10:37:48.402543 [info ] [MainThread]: python path: /Users/pedro.mora/python_venv/bin/python3.12
+[0m10:37:48.402662 [info ] [MainThread]: os info: macOS-15.2-arm64-arm-64bit
+[0m10:37:48.468208 [info ] [MainThread]: Using profiles dir at /Users/pedro.mora/.dbt
+[0m10:37:48.468447 [info ] [MainThread]: Using profiles.yml file at /Users/pedro.mora/.dbt/profiles.yml
+[0m10:37:48.468586 [info ] [MainThread]: Using dbt_project.yml file at /Users/pedro.mora/jaffle_shop1/dbt_project.yml
+[0m10:37:48.469086 [info ] [MainThread]: adapter type: dremio
+[0m10:37:48.469271 [info ] [MainThread]: adapter version: 1.8.0
+[0m10:37:48.511931 [info ] [MainThread]: Configuration:
+[0m10:37:48.512210 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m10:37:48.512349 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m10:37:48.512468 [info ] [MainThread]: Required dependencies:
+[0m10:37:48.512692 [debug] [MainThread]: Executing "git --help"
+[0m10:37:48.534594 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m10:37:48.535129 [debug] [MainThread]: STDERR: "b''"
+[0m10:37:48.535302 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m10:37:48.535450 [info ] [MainThread]: Connection:
+[0m10:37:48.535607 [info ] [MainThread]:   cloud_host: None
+[0m10:37:48.535729 [info ] [MainThread]:   cloud_project_id: None
+[0m10:37:48.535838 [info ] [MainThread]:   software_host: ae44edf0597e44a739317266a07ea4c7-1811275452.us-east-2.elb.amazonaws.com
+[0m10:37:48.535950 [info ] [MainThread]:   port: 9047
+[0m10:37:48.536053 [info ] [MainThread]:   use_ssl: True
+[0m10:37:48.536157 [info ] [MainThread]:   environment: None
+[0m10:37:48.536268 [info ] [MainThread]:   UID: dremio
+[0m10:37:48.536367 [info ] [MainThread]:   root_path: no_schema
+[0m10:37:48.536469 [info ] [MainThread]:   datalake: $scratch
+[0m10:37:48.536567 [info ] [MainThread]:   database: @dremio
+[0m10:37:48.536668 [info ] [MainThread]:   schema: no_schema
+[0m10:37:48.536767 [info ] [MainThread]:   user: dremio
+[0m10:37:48.536865 [info ] [MainThread]:   username: dremio
+[0m10:37:48.536965 [info ] [MainThread]:   object_storage_source: $scratch
+[0m10:37:48.537065 [info ] [MainThread]:   object_storage_path: no_schema
+[0m10:37:48.537162 [info ] [MainThread]:   dremio_space: @dremio
+[0m10:37:48.537261 [info ] [MainThread]:   dremio_space_folder: no_schema
+[0m10:37:48.537566 [info ] [MainThread]: Registered adapter: dremio=1.8.0
+[0m10:37:48.585106 [debug] [MainThread]: Acquiring new dremio connection 'debug'
+[0m10:37:48.585455 [debug] [MainThread]: dremio adapter: Using dremio connection "debug". fetch=False
+[0m10:37:48.585593 [debug] [MainThread]: dremio adapter: On debug: select 1 as id
+[0m10:37:48.585710 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:37:48.662177 [debug] [MainThread]: dremio adapter: Error running SQL: select 1 as id
+[0m10:37:48.662533 [debug] [MainThread]: On debug: No close available on handle
+[0m10:37:48.662769 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m10:37:48.662958 [info ] [MainThread]: [31m1 check failed:[0m
+[0m10:37:48.663116 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  HTTPSConnectionPool(host='ae44edf0597e44a739317266a07ea4c7-1811275452.us-east-2.elb.amazonaws.com', port=9047): Max retries exceeded with url: /apiv2/login (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1000)')))
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m10:37:48.664933 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.34983712, "process_in_blocks": "0", "process_kernel_time": 0.205293, "process_mem_max_rss": "103972864", "process_out_blocks": "0", "process_user_time": 0.730924}
+[0m10:37:48.665357 [debug] [MainThread]: Command `dbt debug` failed at 10:37:48.665283 after 0.35 seconds
+[0m10:37:48.665594 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m10:37:48.665804 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108a41100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108e8fe00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108f6b800>]}
+[0m10:37:48.666083 [debug] [MainThread]: Flushing usage events
+[0m10:37:48.812989 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:54:26.353323 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106cfff20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108b2f200>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108b2eff0>]}
+
+
+============================== 10:54:26.356573 | 6684c30d-e734-4371-ab22-fc59d52ab367 ==============================
+[0m10:54:26.356573 [info ] [MainThread]: Running with dbt=1.9.0
+[0m10:54:26.356936 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/pedro.mora/.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/Users/pedro.mora/jaffle_shop1/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt debug', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m10:54:26.365382 [info ] [MainThread]: dbt version: 1.9.0
+[0m10:54:26.365625 [info ] [MainThread]: python version: 3.12.5
+[0m10:54:26.365763 [info ] [MainThread]: python path: /Users/pedro.mora/python_venv/bin/python3.12
+[0m10:54:26.365886 [info ] [MainThread]: os info: macOS-15.2-arm64-arm-64bit
+[0m10:54:26.419154 [info ] [MainThread]: Using profiles dir at /Users/pedro.mora/.dbt
+[0m10:54:26.419405 [info ] [MainThread]: Using profiles.yml file at /Users/pedro.mora/.dbt/profiles.yml
+[0m10:54:26.419545 [info ] [MainThread]: Using dbt_project.yml file at /Users/pedro.mora/jaffle_shop1/dbt_project.yml
+[0m10:54:26.420045 [info ] [MainThread]: adapter type: dremio
+[0m10:54:26.420175 [info ] [MainThread]: adapter version: 1.8.0
+[0m10:54:26.462806 [info ] [MainThread]: Configuration:
+[0m10:54:26.463084 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m10:54:26.463222 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m10:54:26.463341 [info ] [MainThread]: Required dependencies:
+[0m10:54:26.463559 [debug] [MainThread]: Executing "git --help"
+[0m10:54:26.484797 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m10:54:26.485258 [debug] [MainThread]: STDERR: "b''"
+[0m10:54:26.485411 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m10:54:26.485556 [info ] [MainThread]: Connection:
+[0m10:54:26.485702 [info ] [MainThread]:   cloud_host: None
+[0m10:54:26.485819 [info ] [MainThread]:   cloud_project_id: None
+[0m10:54:26.485928 [info ] [MainThread]:   software_host: ae44edf0597e44a739317266a07ea4c7-1811275452.us-east-2.elb.amazonaws.com
+[0m10:54:26.486038 [info ] [MainThread]:   port: 9047
+[0m10:54:26.486143 [info ] [MainThread]:   use_ssl: True
+[0m10:54:26.486246 [info ] [MainThread]:   environment: None
+[0m10:54:26.486352 [info ] [MainThread]:   UID: dremio
+[0m10:54:26.486454 [info ] [MainThread]:   root_path: no_schema
+[0m10:54:26.486557 [info ] [MainThread]:   datalake: $scratch
+[0m10:54:26.486656 [info ] [MainThread]:   database: @dremio
+[0m10:54:26.486755 [info ] [MainThread]:   schema: no_schema
+[0m10:54:26.486859 [info ] [MainThread]:   user: dremio
+[0m10:54:26.486958 [info ] [MainThread]:   username: dremio
+[0m10:54:26.487057 [info ] [MainThread]:   object_storage_source: $scratch
+[0m10:54:26.487162 [info ] [MainThread]:   object_storage_path: no_schema
+[0m10:54:26.487264 [info ] [MainThread]:   dremio_space: @dremio
+[0m10:54:26.487365 [info ] [MainThread]:   dremio_space_folder: no_schema
+[0m10:54:26.487692 [info ] [MainThread]: Registered adapter: dremio=1.8.0
+[0m10:54:26.532329 [debug] [MainThread]: Acquiring new dremio connection 'debug'
+[0m10:54:26.532671 [debug] [MainThread]: dremio adapter: Using dremio connection "debug". fetch=False
+[0m10:54:26.532807 [debug] [MainThread]: dremio adapter: On debug: select 1 as id
+[0m10:54:26.532927 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:54:26.839020 [debug] [MainThread]: dremio adapter: Connected to db: @dremio
+[0m10:54:27.128955 [debug] [MainThread]: dremio adapter: Job State = QUEUED
+[0m10:54:27.378050 [debug] [MainThread]: dremio adapter: Job State = COMPLETED
+[0m10:54:27.378954 [debug] [MainThread]: dremio adapter: SQL status: 1 in 0.85 seconds
+[0m10:54:27.380849 [debug] [MainThread]: On debug: Close
+[0m10:54:27.381302 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m10:54:27.381838 [info ] [MainThread]: [32mAll checks passed![0m
+[0m10:54:27.384541 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 1.0921309, "process_in_blocks": "0", "process_kernel_time": 0.192331, "process_mem_max_rss": "106430464", "process_out_blocks": "0", "process_user_time": 0.745801}
+[0m10:54:27.384928 [debug] [MainThread]: Command `dbt debug` succeeded at 10:54:27.384858 after 1.09 seconds
+[0m10:54:27.385120 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m10:54:27.385302 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1086e31a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10886e6c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108f31b50>]}
+[0m10:54:27.385516 [debug] [MainThread]: Flushing usage events
+[0m10:54:27.533688 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:23:57.718484 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108642210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1087a7440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1087a7110>]}
+
+
+============================== 11:23:57.721567 | b898bd43-f101-45dc-bcf0-608fe327b344 ==============================
+[0m11:23:57.721567 [info ] [MainThread]: Running with dbt=1.9.0
+[0m11:23:57.721887 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/Users/pedro.mora/jaffle_shop1/logs', 'profiles_dir': '/Users/pedro.mora/.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'invocation_command': 'dbt run', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m11:23:57.833770 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b898bd43-f101-45dc-bcf0-608fe327b344', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1087614c0>]}
+[0m11:23:57.859403 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b898bd43-f101-45dc-bcf0-608fe327b344', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1087d1070>]}
+[0m11:23:57.860054 [info ] [MainThread]: Registered adapter: dremio=1.8.0
+[0m11:23:57.911505 [debug] [MainThread]: checksum: c99e828bba267739642b5a3ce85f17518764ea526e0e6c4fdc649171c1a66bff, vars: {}, profile: , target: , version: 1.9.0
+[0m11:23:57.911994 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m11:23:57.912174 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'b898bd43-f101-45dc-bcf0-608fe327b344', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1087a53a0>]}
+[0m11:23:58.468198 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b898bd43-f101-45dc-bcf0-608fe327b344', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108e86390>]}
+[0m11:23:58.503739 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/pedro.mora/jaffle_shop1/target/manifest.json
+[0m11:23:58.505710 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/pedro.mora/jaffle_shop1/target/semantic_manifest.json
+[0m11:23:58.553784 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b898bd43-f101-45dc-bcf0-608fe327b344', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109087860>]}
+[0m11:23:58.554060 [info ] [MainThread]: Found 2 models, 4 data tests, 467 macros
+[0m11:23:58.554213 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b898bd43-f101-45dc-bcf0-608fe327b344', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109086480>]}
+[0m11:23:58.555005 [info ] [MainThread]: 
+[0m11:23:58.555155 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m11:23:58.555269 [info ] [MainThread]: 
+[0m11:23:58.555471 [debug] [MainThread]: Acquiring new dremio connection 'master'
+[0m11:23:58.555955 [debug] [ThreadPool]: Acquiring new dremio connection 'list_@dremio'
+[0m11:23:58.561988 [debug] [ThreadPool]: dremio adapter: Using dremio connection "list_@dremio". fetch=True
+[0m11:23:58.562180 [debug] [ThreadPool]: dremio adapter: On list_@dremio: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "connection_name": "list_@dremio"} */
+
+    
+    select substring(schema_name, position('.' in schema_name) + 1)
+    from information_schema.schemata
+    where ilike(schema_name, '@dremio.%')
+    union
+    values('no_schema')
+  
+  
+[0m11:23:58.562321 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:23:58.859843 [debug] [ThreadPool]: dremio adapter: Connected to db: @dremio
+[0m11:23:59.155853 [debug] [ThreadPool]: dremio adapter: Job State = PLANNING
+[0m11:23:59.405542 [debug] [ThreadPool]: dremio adapter: Job State = RUNNING
+[0m11:23:59.655136 [debug] [ThreadPool]: dremio adapter: Job State = COMPLETED
+[0m11:23:59.726825 [debug] [ThreadPool]: dremio adapter: SQL status: 1 in 1.16 seconds
+[0m11:23:59.727514 [debug] [ThreadPool]: On list_@dremio: Close
+[0m11:23:59.727976 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_@dremio, now list_$scratch)
+[0m11:23:59.729892 [debug] [ThreadPool]: dremio adapter: Using dremio connection "list_$scratch". fetch=True
+[0m11:23:59.730149 [debug] [ThreadPool]: dremio adapter: On list_$scratch: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "connection_name": "list_$scratch"} */
+
+    
+    select substring(schema_name, position('.' in schema_name) + 1)
+    from information_schema.schemata
+    where ilike(schema_name, '$scratch.%')
+    union
+    values('no_schema')
+  
+  
+[0m11:23:59.730355 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:23:59.906891 [debug] [ThreadPool]: dremio adapter: Connected to db: @dremio
+[0m11:24:00.200408 [debug] [ThreadPool]: dremio adapter: Job State = PLANNING
+[0m11:24:00.448013 [debug] [ThreadPool]: dremio adapter: Job State = RUNNING
+[0m11:24:00.694456 [debug] [ThreadPool]: dremio adapter: Job State = COMPLETED
+[0m11:24:00.748170 [debug] [ThreadPool]: dremio adapter: SQL status: 1 in 1.02 seconds
+[0m11:24:00.748762 [debug] [ThreadPool]: On list_$scratch: Close
+[0m11:24:00.749782 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_$scratch, now list_@dremio_no_schema)
+[0m11:24:00.756809 [debug] [ThreadPool]: dremio adapter: Using dremio connection "list_@dremio_no_schema". fetch=True
+[0m11:24:00.757069 [debug] [ThreadPool]: dremio adapter: On list_@dremio_no_schema: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "connection_name": "list_@dremio_no_schema"} */
+
+
+      select (case when position('.' in table_schema) > 0
+              then substring(table_schema, 1, position('.' in table_schema) - 1)
+              else table_schema
+          end) as table_catalog
+          ,table_name
+          ,(case when position('.' in table_schema) > 0
+              then substring(table_schema, position('.' in table_schema) + 1)
+              else 'no_schema'
+          end) as table_schema
+          ,lower(table_type) as table_type
+      from information_schema."tables"
+        where ilike(table_schema, '@dremio')
+      and table_type <> 'system_table'
+
+  
+[0m11:24:00.757278 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:24:00.931596 [debug] [ThreadPool]: dremio adapter: Connected to db: @dremio
+[0m11:24:01.226481 [debug] [ThreadPool]: dremio adapter: Job State = PLANNING
+[0m11:24:01.479413 [debug] [ThreadPool]: dremio adapter: Job State = RUNNING
+[0m11:24:01.732023 [debug] [ThreadPool]: dremio adapter: Job State = COMPLETED
+[0m11:24:01.795297 [debug] [ThreadPool]: dremio adapter: SQL status: 0 in 1.04 seconds
+[0m11:24:01.796310 [debug] [ThreadPool]: On list_@dremio_no_schema: ROLLBACK
+[0m11:24:01.796759 [debug] [ThreadPool]: dremio adapter: Handle rollback not implemented.
+[0m11:24:01.797145 [debug] [ThreadPool]: On list_@dremio_no_schema: Close
+[0m11:24:01.797812 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_@dremio_no_schema, now list_$scratch_no_schema)
+[0m11:24:01.800857 [debug] [ThreadPool]: dremio adapter: Using dremio connection "list_$scratch_no_schema". fetch=True
+[0m11:24:01.801232 [debug] [ThreadPool]: dremio adapter: On list_$scratch_no_schema: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "connection_name": "list_$scratch_no_schema"} */
+
+
+      select (case when position('.' in table_schema) > 0
+              then substring(table_schema, 1, position('.' in table_schema) - 1)
+              else table_schema
+          end) as table_catalog
+          ,table_name
+          ,(case when position('.' in table_schema) > 0
+              then substring(table_schema, position('.' in table_schema) + 1)
+              else 'no_schema'
+          end) as table_schema
+          ,lower(table_type) as table_type
+      from information_schema."tables"
+        where ilike(table_schema, '$scratch')
+      and table_type <> 'system_table'
+
+  
+[0m11:24:01.801586 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:24:01.980237 [debug] [ThreadPool]: dremio adapter: Connected to db: @dremio
+[0m11:24:02.273399 [debug] [ThreadPool]: dremio adapter: Job State = PLANNING
+[0m11:24:02.521016 [debug] [ThreadPool]: dremio adapter: Job State = COMPLETED
+[0m11:24:02.572762 [debug] [ThreadPool]: dremio adapter: SQL status: 0 in 0.77 seconds
+[0m11:24:02.573626 [debug] [ThreadPool]: On list_$scratch_no_schema: ROLLBACK
+[0m11:24:02.573969 [debug] [ThreadPool]: dremio adapter: Handle rollback not implemented.
+[0m11:24:02.574257 [debug] [ThreadPool]: On list_$scratch_no_schema: Close
+[0m11:24:02.574968 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b898bd43-f101-45dc-bcf0-608fe327b344', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109087080>]}
+[0m11:24:02.576914 [debug] [Thread-1 (]: Began running node model.jaffle_shop1.my_first_dbt_model
+[0m11:24:02.577491 [info ] [Thread-1 (]: 1 of 2 START sql table model $scratch.my_first_dbt_model ....................... [RUN]
+[0m11:24:02.577911 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_$scratch_no_schema, now model.jaffle_shop1.my_first_dbt_model)
+[0m11:24:02.578223 [debug] [Thread-1 (]: Began compiling node model.jaffle_shop1.my_first_dbt_model
+[0m11:24:02.586331 [debug] [Thread-1 (]: Writing injected SQL for node "model.jaffle_shop1.my_first_dbt_model"
+[0m11:24:02.587803 [debug] [Thread-1 (]: Began executing node model.jaffle_shop1.my_first_dbt_model
+[0m11:24:02.624027 [debug] [Thread-1 (]: Writing runtime sql for node "model.jaffle_shop1.my_first_dbt_model"
+[0m11:24:02.624894 [debug] [Thread-1 (]: dremio adapter: Using dremio connection "model.jaffle_shop1.my_first_dbt_model". fetch=False
+[0m11:24:02.625111 [debug] [Thread-1 (]: dremio adapter: On model.jaffle_shop1.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "node_id": "model.jaffle_shop1.my_first_dbt_model"} */
+
+  
+    
+  
+
+  create table "$scratch"."my_first_dbt_model"
+   
+  
+  
+  
+  
+  as (
+    /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select null as id
+
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+  )
+  
+[0m11:24:02.625305 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:24:02.800716 [debug] [Thread-1 (]: dremio adapter: Connected to db: @dremio
+[0m11:24:03.090735 [debug] [Thread-1 (]: dremio adapter: Job State = METADATA_RETRIEVAL
+[0m11:24:03.339587 [debug] [Thread-1 (]: dremio adapter: Job State = PLANNING
+[0m11:24:03.586402 [debug] [Thread-1 (]: dremio adapter: Job State = RUNNING
+[0m11:24:04.333735 [debug] [Thread-1 (]: dremio adapter: Job State = COMPLETED
+[0m11:24:04.335081 [debug] [Thread-1 (]: dremio adapter: SQL status: 2 in 1.71 seconds
+[0m11:24:04.361286 [debug] [Thread-1 (]: dremio adapter: Using dremio connection "model.jaffle_shop1.my_first_dbt_model". fetch=False
+[0m11:24:04.361921 [debug] [Thread-1 (]: dremio adapter: On model.jaffle_shop1.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "node_id": "model.jaffle_shop1.my_first_dbt_model"} */
+
+  
+
+  create or replace view "@dremio"."my_first_dbt_model" as select *
+          from 
+  "$scratch"."my_first_dbt_model"
+[0m11:24:04.650825 [debug] [Thread-1 (]: dremio adapter: Job State = METADATA_RETRIEVAL
+[0m11:24:08.611651 [debug] [Thread-1 (]: dremio adapter: Job State = COMPLETED
+[0m11:24:08.613930 [debug] [Thread-1 (]: dremio adapter: rowCount does not exist in job_status payload
+[0m11:24:08.615116 [debug] [Thread-1 (]: dremio adapter: SQL status: OK in 4.25 seconds
+[0m11:24:08.645943 [debug] [Thread-1 (]: On model.jaffle_shop1.my_first_dbt_model: ROLLBACK
+[0m11:24:08.646471 [debug] [Thread-1 (]: dremio adapter: Handle rollback not implemented.
+[0m11:24:08.646795 [debug] [Thread-1 (]: On model.jaffle_shop1.my_first_dbt_model: Close
+[0m11:24:08.650083 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b898bd43-f101-45dc-bcf0-608fe327b344', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108c97ef0>]}
+[0m11:24:08.650826 [info ] [Thread-1 (]: 1 of 2 OK created sql table model $scratch.my_first_dbt_model .................. [[32m2[0m in 6.07s]
+[0m11:24:08.651355 [debug] [Thread-1 (]: Finished running node model.jaffle_shop1.my_first_dbt_model
+[0m11:24:08.652238 [debug] [Thread-1 (]: Began running node model.jaffle_shop1.my_second_dbt_model
+[0m11:24:08.652728 [info ] [Thread-1 (]: 2 of 2 START sql view model my_second_dbt_model ................................ [RUN]
+[0m11:24:08.653157 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.jaffle_shop1.my_first_dbt_model, now model.jaffle_shop1.my_second_dbt_model)
+[0m11:24:08.653451 [debug] [Thread-1 (]: Began compiling node model.jaffle_shop1.my_second_dbt_model
+[0m11:24:08.663168 [debug] [Thread-1 (]: Writing injected SQL for node "model.jaffle_shop1.my_second_dbt_model"
+[0m11:24:08.664439 [debug] [Thread-1 (]: Began executing node model.jaffle_shop1.my_second_dbt_model
+[0m11:24:08.672219 [debug] [Thread-1 (]: Writing runtime sql for node "model.jaffle_shop1.my_second_dbt_model"
+[0m11:24:08.673113 [debug] [Thread-1 (]: dremio adapter: Using dremio connection "model.jaffle_shop1.my_second_dbt_model". fetch=False
+[0m11:24:08.673387 [debug] [Thread-1 (]: dremio adapter: On model.jaffle_shop1.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "node_id": "model.jaffle_shop1.my_second_dbt_model"} */
+
+  
+
+  create or replace view "@dremio"."my_second_dbt_model" as -- Use the `ref` function to select from other models
+
+select *
+from "$scratch"."my_first_dbt_model"
+where id = 1
+[0m11:24:08.673626 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:24:08.851477 [debug] [Thread-1 (]: dremio adapter: Connected to db: @dremio
+[0m11:24:09.154336 [debug] [Thread-1 (]: dremio adapter: Job State = METADATA_RETRIEVAL
+[0m11:24:09.407369 [debug] [Thread-1 (]: dremio adapter: Job State = COMPLETED
+[0m11:24:09.408572 [debug] [Thread-1 (]: dremio adapter: rowCount does not exist in job_status payload
+[0m11:24:09.409774 [debug] [Thread-1 (]: dremio adapter: SQL status: OK in 0.74 seconds
+[0m11:24:09.424122 [debug] [Thread-1 (]: dremio adapter: Using dremio connection "model.jaffle_shop1.my_second_dbt_model". fetch=False
+[0m11:24:09.425331 [debug] [Thread-1 (]: dremio adapter: On model.jaffle_shop1.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "node_id": "model.jaffle_shop1.my_second_dbt_model"} */
+drop table if exists "$scratch"."my_second_dbt_model"
+[0m11:24:09.715124 [debug] [Thread-1 (]: dremio adapter: Job State = METADATA_RETRIEVAL
+[0m11:24:09.969564 [debug] [Thread-1 (]: dremio adapter: Job State = COMPLETED
+[0m11:24:09.971013 [debug] [Thread-1 (]: dremio adapter: rowCount does not exist in job_status payload
+[0m11:24:09.971536 [debug] [Thread-1 (]: dremio adapter: SQL status: OK in 0.55 seconds
+[0m11:24:09.982822 [debug] [Thread-1 (]: On model.jaffle_shop1.my_second_dbt_model: ROLLBACK
+[0m11:24:09.983544 [debug] [Thread-1 (]: dremio adapter: Handle rollback not implemented.
+[0m11:24:09.983982 [debug] [Thread-1 (]: On model.jaffle_shop1.my_second_dbt_model: Close
+[0m11:24:09.985005 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b898bd43-f101-45dc-bcf0-608fe327b344', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108f03c50>]}
+[0m11:24:09.986169 [info ] [Thread-1 (]: 2 of 2 OK created sql view model my_second_dbt_model ........................... [[32mOK[0m in 1.33s]
+[0m11:24:09.989325 [debug] [Thread-1 (]: Finished running node model.jaffle_shop1.my_second_dbt_model
+[0m11:24:09.991418 [debug] [MainThread]: On master: ROLLBACK
+[0m11:24:09.991965 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:24:10.172661 [debug] [MainThread]: dremio adapter: Connected to db: @dremio
+[0m11:24:10.174019 [debug] [MainThread]: dremio adapter: Handle rollback not implemented.
+[0m11:24:10.174587 [debug] [MainThread]: On master: ROLLBACK
+[0m11:24:10.174962 [debug] [MainThread]: dremio adapter: Handle rollback not implemented.
+[0m11:24:10.175309 [debug] [MainThread]: On master: Close
+[0m11:24:10.176066 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:24:10.176514 [debug] [MainThread]: Connection 'model.jaffle_shop1.my_second_dbt_model' was properly closed.
+[0m11:24:10.177028 [info ] [MainThread]: 
+[0m11:24:10.178232 [info ] [MainThread]: Finished running 1 table model, 1 view model in 0 hours 0 minutes and 11.62 seconds (11.62s).
+[0m11:24:10.181119 [debug] [MainThread]: Command end result
+[0m11:24:10.214228 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/pedro.mora/jaffle_shop1/target/manifest.json
+[0m11:24:10.216730 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/pedro.mora/jaffle_shop1/target/semantic_manifest.json
+[0m11:24:10.222072 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/pedro.mora/jaffle_shop1/target/run_results.json
+[0m11:24:10.222346 [info ] [MainThread]: 
+[0m11:24:10.222624 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m11:24:10.222822 [info ] [MainThread]: 
+[0m11:24:10.223036 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m11:24:10.225615 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 12.570886, "process_in_blocks": "0", "process_kernel_time": 0.266292, "process_mem_max_rss": "123846656", "process_out_blocks": "0", "process_user_time": 1.815317}
+[0m11:24:10.226286 [debug] [MainThread]: Command `dbt run` succeeded at 11:24:10.226193 after 12.57 seconds
+[0m11:24:10.226617 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107ea76e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1087a74a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1087a7110>]}
+[0m11:24:10.226914 [debug] [MainThread]: Flushing usage events
+[0m11:24:10.379509 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:56:47.072407 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10692eff0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106d47680>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106d47470>]}
+
+
+============================== 11:56:47.075356 | c8598afa-8678-4c72-936e-18ccf5d41b62 ==============================
+[0m11:56:47.075356 [info ] [MainThread]: Running with dbt=1.9.0
+[0m11:56:47.075659 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/Users/pedro.mora/Documents/GitHub/dbt-tutorial/jaffle_shop1/logs', 'profiles_dir': '/Users/pedro.mora/.dbt', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt run', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m11:56:47.182527 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c8598afa-8678-4c72-936e-18ccf5d41b62', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106aafaa0>]}
+[0m11:56:47.208125 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c8598afa-8678-4c72-936e-18ccf5d41b62', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1064b2b70>]}
+[0m11:56:47.208777 [info ] [MainThread]: Registered adapter: dremio=1.8.0
+[0m11:56:47.263386 [debug] [MainThread]: checksum: c99e828bba267739642b5a3ce85f17518764ea526e0e6c4fdc649171c1a66bff, vars: {}, profile: , target: , version: 1.9.0
+[0m11:56:47.327628 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m11:56:47.327893 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m11:56:47.347622 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c8598afa-8678-4c72-936e-18ccf5d41b62', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1071caba0>]}
+[0m11:56:47.388039 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/pedro.mora/Documents/GitHub/dbt-tutorial/jaffle_shop1/target/manifest.json
+[0m11:56:47.390072 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/pedro.mora/Documents/GitHub/dbt-tutorial/jaffle_shop1/target/semantic_manifest.json
+[0m11:56:47.401321 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c8598afa-8678-4c72-936e-18ccf5d41b62', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107576210>]}
+[0m11:56:47.401578 [info ] [MainThread]: Found 2 models, 4 data tests, 467 macros
+[0m11:56:47.401765 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c8598afa-8678-4c72-936e-18ccf5d41b62', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107262690>]}
+[0m11:56:47.402791 [info ] [MainThread]: 
+[0m11:56:47.403027 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m11:56:47.403171 [info ] [MainThread]: 
+[0m11:56:47.403434 [debug] [MainThread]: Acquiring new dremio connection 'master'
+[0m11:56:47.403895 [debug] [ThreadPool]: Acquiring new dremio connection 'list_$scratch'
+[0m11:56:47.410918 [debug] [ThreadPool]: dremio adapter: Using dremio connection "list_$scratch". fetch=True
+[0m11:56:47.411100 [debug] [ThreadPool]: dremio adapter: On list_$scratch: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "connection_name": "list_$scratch"} */
+
+    
+    select substring(schema_name, position('.' in schema_name) + 1)
+    from information_schema.schemata
+    where ilike(schema_name, '$scratch.%')
+    union
+    values('no_schema')
+  
+  
+[0m11:56:47.411243 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:56:47.741656 [debug] [ThreadPool]: dremio adapter: Connected to db: @dremio
+[0m11:56:48.039483 [debug] [ThreadPool]: dremio adapter: Job State = QUEUED
+[0m11:56:48.286850 [debug] [ThreadPool]: dremio adapter: Job State = COMPLETED
+[0m11:56:48.347924 [debug] [ThreadPool]: dremio adapter: SQL status: 1 in 0.94 seconds
+[0m11:56:48.348673 [debug] [ThreadPool]: On list_$scratch: Close
+[0m11:56:48.349237 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_$scratch, now list_@dremio)
+[0m11:56:48.351782 [debug] [ThreadPool]: dremio adapter: Using dremio connection "list_@dremio". fetch=True
+[0m11:56:48.352350 [debug] [ThreadPool]: dremio adapter: On list_@dremio: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "connection_name": "list_@dremio"} */
+
+    
+    select substring(schema_name, position('.' in schema_name) + 1)
+    from information_schema.schemata
+    where ilike(schema_name, '@dremio.%')
+    union
+    values('no_schema')
+  
+  
+[0m11:56:48.352684 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:56:48.531435 [debug] [ThreadPool]: dremio adapter: Connected to db: @dremio
+[0m11:56:48.825787 [debug] [ThreadPool]: dremio adapter: Job State = QUEUED
+[0m11:56:49.077003 [debug] [ThreadPool]: dremio adapter: Job State = COMPLETED
+[0m11:56:49.130284 [debug] [ThreadPool]: dremio adapter: SQL status: 1 in 0.78 seconds
+[0m11:56:49.131016 [debug] [ThreadPool]: On list_@dremio: Close
+[0m11:56:49.132512 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_@dremio, now list_$scratch_no_schema)
+[0m11:56:49.142350 [debug] [ThreadPool]: dremio adapter: Using dremio connection "list_$scratch_no_schema". fetch=True
+[0m11:56:49.142826 [debug] [ThreadPool]: dremio adapter: On list_$scratch_no_schema: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "connection_name": "list_$scratch_no_schema"} */
+
+
+      select (case when position('.' in table_schema) > 0
+              then substring(table_schema, 1, position('.' in table_schema) - 1)
+              else table_schema
+          end) as table_catalog
+          ,table_name
+          ,(case when position('.' in table_schema) > 0
+              then substring(table_schema, position('.' in table_schema) + 1)
+              else 'no_schema'
+          end) as table_schema
+          ,lower(table_type) as table_type
+      from information_schema."tables"
+        where ilike(table_schema, '$scratch')
+      and table_type <> 'system_table'
+
+  
+[0m11:56:49.143173 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:56:49.318007 [debug] [ThreadPool]: dremio adapter: Connected to db: @dremio
+[0m11:56:49.610119 [debug] [ThreadPool]: dremio adapter: Job State = QUEUED
+[0m11:56:49.860832 [debug] [ThreadPool]: dremio adapter: Job State = RUNNING
+[0m11:56:50.111135 [debug] [ThreadPool]: dremio adapter: Job State = COMPLETED
+[0m11:56:50.168121 [debug] [ThreadPool]: dremio adapter: SQL status: 1 in 1.02 seconds
+[0m11:56:50.169014 [debug] [ThreadPool]: On list_$scratch_no_schema: ROLLBACK
+[0m11:56:50.169358 [debug] [ThreadPool]: dremio adapter: Handle rollback not implemented.
+[0m11:56:50.169633 [debug] [ThreadPool]: On list_$scratch_no_schema: Close
+[0m11:56:50.170160 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_$scratch_no_schema, now list_@dremio_no_schema)
+[0m11:56:50.173104 [debug] [ThreadPool]: dremio adapter: Using dremio connection "list_@dremio_no_schema". fetch=True
+[0m11:56:50.173468 [debug] [ThreadPool]: dremio adapter: On list_@dremio_no_schema: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "connection_name": "list_@dremio_no_schema"} */
+
+
+      select (case when position('.' in table_schema) > 0
+              then substring(table_schema, 1, position('.' in table_schema) - 1)
+              else table_schema
+          end) as table_catalog
+          ,table_name
+          ,(case when position('.' in table_schema) > 0
+              then substring(table_schema, position('.' in table_schema) + 1)
+              else 'no_schema'
+          end) as table_schema
+          ,lower(table_type) as table_type
+      from information_schema."tables"
+        where ilike(table_schema, '@dremio')
+      and table_type <> 'system_table'
+
+  
+[0m11:56:50.173830 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:56:50.349795 [debug] [ThreadPool]: dremio adapter: Connected to db: @dremio
+[0m11:56:50.636579 [debug] [ThreadPool]: dremio adapter: Job State = QUEUED
+[0m11:56:50.886339 [debug] [ThreadPool]: dremio adapter: Job State = RUNNING
+[0m11:56:51.139029 [debug] [ThreadPool]: dremio adapter: Job State = COMPLETED
+[0m11:56:51.190599 [debug] [ThreadPool]: dremio adapter: SQL status: 2 in 1.02 seconds
+[0m11:56:51.191006 [debug] [ThreadPool]: On list_@dremio_no_schema: ROLLBACK
+[0m11:56:51.191150 [debug] [ThreadPool]: dremio adapter: Handle rollback not implemented.
+[0m11:56:51.191270 [debug] [ThreadPool]: On list_@dremio_no_schema: Close
+[0m11:56:51.191790 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c8598afa-8678-4c72-936e-18ccf5d41b62', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1071c8bc0>]}
+[0m11:56:51.192588 [debug] [Thread-1 (]: Began running node model.jaffle_shop1.my_first_dbt_model
+[0m11:56:51.192838 [info ] [Thread-1 (]: 1 of 2 START sql table model $scratch.my_first_dbt_model ....................... [RUN]
+[0m11:56:51.193062 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_@dremio_no_schema, now model.jaffle_shop1.my_first_dbt_model)
+[0m11:56:51.193225 [debug] [Thread-1 (]: Began compiling node model.jaffle_shop1.my_first_dbt_model
+[0m11:56:51.197244 [debug] [Thread-1 (]: Writing injected SQL for node "model.jaffle_shop1.my_first_dbt_model"
+[0m11:56:51.197861 [debug] [Thread-1 (]: Began executing node model.jaffle_shop1.my_first_dbt_model
+[0m11:56:51.209956 [debug] [Thread-1 (]: dremio adapter: Using dremio connection "model.jaffle_shop1.my_first_dbt_model". fetch=False
+[0m11:56:51.210194 [debug] [Thread-1 (]: dremio adapter: On model.jaffle_shop1.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "node_id": "model.jaffle_shop1.my_first_dbt_model"} */
+drop table if exists "$scratch"."my_first_dbt_model"
+[0m11:56:51.210355 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:56:51.391616 [debug] [Thread-1 (]: dremio adapter: Connected to db: @dremio
+[0m11:56:51.684920 [debug] [Thread-1 (]: dremio adapter: Job State = METADATA_RETRIEVAL
+[0m11:56:52.188996 [debug] [Thread-1 (]: dremio adapter: Job State = COMPLETED
+[0m11:56:52.190070 [debug] [Thread-1 (]: dremio adapter: rowCount does not exist in job_status payload
+[0m11:56:52.190729 [debug] [Thread-1 (]: dremio adapter: SQL status: OK in 0.98 seconds
+[0m11:56:52.224770 [debug] [Thread-1 (]: Writing runtime sql for node "model.jaffle_shop1.my_first_dbt_model"
+[0m11:56:52.225870 [debug] [Thread-1 (]: dremio adapter: Using dremio connection "model.jaffle_shop1.my_first_dbt_model". fetch=False
+[0m11:56:52.226133 [debug] [Thread-1 (]: dremio adapter: On model.jaffle_shop1.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "node_id": "model.jaffle_shop1.my_first_dbt_model"} */
+
+  
+    
+  
+
+  create table "$scratch"."my_first_dbt_model"
+   
+  
+  
+  
+  
+  as (
+    /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select null as id
+
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+  )
+  
+[0m11:56:52.511467 [debug] [Thread-1 (]: dremio adapter: Job State = METADATA_RETRIEVAL
+[0m11:56:52.761686 [debug] [Thread-1 (]: dremio adapter: Job State = PLANNING
+[0m11:56:53.010720 [debug] [Thread-1 (]: dremio adapter: Job State = RUNNING
+[0m11:56:53.500995 [debug] [Thread-1 (]: dremio adapter: Job State = COMPLETED
+[0m11:56:53.501763 [debug] [Thread-1 (]: dremio adapter: SQL status: 2 in 1.28 seconds
+[0m11:56:53.515272 [debug] [Thread-1 (]: dremio adapter: Using dremio connection "model.jaffle_shop1.my_first_dbt_model". fetch=False
+[0m11:56:53.515563 [debug] [Thread-1 (]: dremio adapter: On model.jaffle_shop1.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "node_id": "model.jaffle_shop1.my_first_dbt_model"} */
+
+  
+
+  create or replace view "@dremio"."my_first_dbt_model" as select *
+          from 
+  "$scratch"."my_first_dbt_model"
+[0m11:56:53.803254 [debug] [Thread-1 (]: dremio adapter: Job State = METADATA_RETRIEVAL
+[0m11:56:55.267793 [debug] [Thread-1 (]: dremio adapter: Job State = FAILED
+[0m11:56:55.269696 [debug] [Thread-1 (]: dremio adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "node_id": "model.jaffle_shop1.my_first_dbt_model"} */
+
+  
+
+  create or replace view "@dremio"."my_first_dbt_model" as select *
+          from 
+  "$scratch"."my_first_dbt_model"
+[0m11:56:55.270609 [debug] [Thread-1 (]: On model.jaffle_shop1.my_first_dbt_model: ROLLBACK
+[0m11:56:55.271293 [debug] [Thread-1 (]: dremio adapter: Handle rollback not implemented.
+[0m11:56:55.271527 [debug] [Thread-1 (]: On model.jaffle_shop1.my_first_dbt_model: Close
+[0m11:56:55.277068 [debug] [Thread-1 (]: Runtime Error in model my_first_dbt_model (models/example/my_first_dbt_model.sql)
+  ERROR: Selected table has no columns.
+[0m11:56:55.278206 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c8598afa-8678-4c72-936e-18ccf5d41b62', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1075ebcb0>]}
+[0m11:56:55.278540 [error] [Thread-1 (]: 1 of 2 ERROR creating sql table model $scratch.my_first_dbt_model .............. [[31mERROR[0m in 4.08s]
+[0m11:56:55.278824 [debug] [Thread-1 (]: Finished running node model.jaffle_shop1.my_first_dbt_model
+[0m11:56:55.279109 [debug] [Thread-4 (]: Marking all children of 'model.jaffle_shop1.my_first_dbt_model' to be skipped because of status 'error'.  Reason: Runtime Error in model my_first_dbt_model (models/example/my_first_dbt_model.sql)
+  ERROR: Selected table has no columns..
+[0m11:56:55.279813 [debug] [Thread-1 (]: Began running node model.jaffle_shop1.my_second_dbt_model
+[0m11:56:55.280076 [info ] [Thread-1 (]: 2 of 2 SKIP relation no_schema.my_second_dbt_model ............................. [[33mSKIP[0m]
+[0m11:56:55.280409 [debug] [Thread-1 (]: Finished running node model.jaffle_shop1.my_second_dbt_model
+[0m11:56:55.280993 [debug] [MainThread]: On master: ROLLBACK
+[0m11:56:55.281176 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:56:55.455485 [debug] [MainThread]: dremio adapter: Connected to db: @dremio
+[0m11:56:55.456144 [debug] [MainThread]: dremio adapter: Handle rollback not implemented.
+[0m11:56:55.456588 [debug] [MainThread]: On master: ROLLBACK
+[0m11:56:55.457140 [debug] [MainThread]: dremio adapter: Handle rollback not implemented.
+[0m11:56:55.457576 [debug] [MainThread]: On master: Close
+[0m11:56:55.458193 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:56:55.458561 [debug] [MainThread]: Connection 'model.jaffle_shop1.my_first_dbt_model' was properly closed.
+[0m11:56:55.458739 [info ] [MainThread]: 
+[0m11:56:55.458908 [info ] [MainThread]: Finished running 1 table model, 1 view model in 0 hours 0 minutes and 8.06 seconds (8.06s).
+[0m11:56:55.459247 [debug] [MainThread]: Command end result
+[0m11:56:55.473769 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/pedro.mora/Documents/GitHub/dbt-tutorial/jaffle_shop1/target/manifest.json
+[0m11:56:55.475118 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/pedro.mora/Documents/GitHub/dbt-tutorial/jaffle_shop1/target/semantic_manifest.json
+[0m11:56:55.478454 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/pedro.mora/Documents/GitHub/dbt-tutorial/jaffle_shop1/target/run_results.json
+[0m11:56:55.478640 [info ] [MainThread]: 
+[0m11:56:55.478825 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m11:56:55.478964 [info ] [MainThread]: 
+[0m11:56:55.479132 [error] [MainThread]:   Runtime Error in model my_first_dbt_model (models/example/my_first_dbt_model.sql)
+  ERROR: Selected table has no columns.
+[0m11:56:55.479255 [info ] [MainThread]: 
+[0m11:56:55.479386 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=1 TOTAL=2
+[0m11:56:55.480679 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 8.476183, "process_in_blocks": "0", "process_kernel_time": 0.240592, "process_mem_max_rss": "117030912", "process_out_blocks": "0", "process_user_time": 1.115708}
+[0m11:56:55.481032 [debug] [MainThread]: Command `dbt run` failed at 11:56:55.480981 after 8.48 seconds
+[0m11:56:55.481241 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106697800>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1075404a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107537140>]}
+[0m11:56:55.481419 [debug] [MainThread]: Flushing usage events
+[0m11:56:55.668251 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:57:44.556362 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109e3d070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109e5f650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109e5f320>]}
+
+
+============================== 11:57:44.559563 | e123f78b-2c67-4fa8-90fd-ce971f9c68ed ==============================
+[0m11:57:44.559563 [info ] [MainThread]: Running with dbt=1.9.0
+[0m11:57:44.559899 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': '/Users/pedro.mora/jaffle_shop1/logs', 'fail_fast': 'False', 'profiles_dir': '/Users/pedro.mora/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m11:57:44.668054 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e123f78b-2c67-4fa8-90fd-ce971f9c68ed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a9c6f00>]}
+[0m11:57:44.694881 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e123f78b-2c67-4fa8-90fd-ce971f9c68ed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109a788f0>]}
+[0m11:57:44.695645 [info ] [MainThread]: Registered adapter: dremio=1.8.0
+[0m11:57:44.750151 [debug] [MainThread]: checksum: c99e828bba267739642b5a3ce85f17518764ea526e0e6c4fdc649171c1a66bff, vars: {}, profile: , target: , version: 1.9.0
+[0m11:57:44.813645 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m11:57:44.813908 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m11:57:44.832652 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e123f78b-2c67-4fa8-90fd-ce971f9c68ed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109e3c6e0>]}
+[0m11:57:44.865948 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/pedro.mora/jaffle_shop1/target/manifest.json
+[0m11:57:44.867812 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/pedro.mora/jaffle_shop1/target/semantic_manifest.json
+[0m11:57:44.878484 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e123f78b-2c67-4fa8-90fd-ce971f9c68ed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ae8e750>]}
+[0m11:57:44.878727 [info ] [MainThread]: Found 2 models, 4 data tests, 467 macros
+[0m11:57:44.878894 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e123f78b-2c67-4fa8-90fd-ce971f9c68ed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10aae5be0>]}
+[0m11:57:44.879740 [info ] [MainThread]: 
+[0m11:57:44.879907 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m11:57:44.880033 [info ] [MainThread]: 
+[0m11:57:44.880269 [debug] [MainThread]: Acquiring new dremio connection 'master'
+[0m11:57:44.880712 [debug] [ThreadPool]: Acquiring new dremio connection 'list_@dremio'
+[0m11:57:44.887557 [debug] [ThreadPool]: dremio adapter: Using dremio connection "list_@dremio". fetch=True
+[0m11:57:44.887766 [debug] [ThreadPool]: dremio adapter: On list_@dremio: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "connection_name": "list_@dremio"} */
+
+    
+    select substring(schema_name, position('.' in schema_name) + 1)
+    from information_schema.schemata
+    where ilike(schema_name, '@dremio.%')
+    union
+    values('no_schema')
+  
+  
+[0m11:57:44.887899 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:57:45.183417 [debug] [ThreadPool]: dremio adapter: Connected to db: @dremio
+[0m11:57:45.476625 [debug] [ThreadPool]: dremio adapter: Job State = QUEUED
+[0m11:57:45.731541 [debug] [ThreadPool]: dremio adapter: Job State = COMPLETED
+[0m11:57:45.784724 [debug] [ThreadPool]: dremio adapter: SQL status: 1 in 0.90 seconds
+[0m11:57:45.785100 [debug] [ThreadPool]: On list_@dremio: Close
+[0m11:57:45.785406 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_@dremio, now list_$scratch)
+[0m11:57:45.786952 [debug] [ThreadPool]: dremio adapter: Using dremio connection "list_$scratch". fetch=True
+[0m11:57:45.787340 [debug] [ThreadPool]: dremio adapter: On list_$scratch: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "connection_name": "list_$scratch"} */
+
+    
+    select substring(schema_name, position('.' in schema_name) + 1)
+    from information_schema.schemata
+    where ilike(schema_name, '$scratch.%')
+    union
+    values('no_schema')
+  
+  
+[0m11:57:45.787524 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:57:45.964461 [debug] [ThreadPool]: dremio adapter: Connected to db: @dremio
+[0m11:57:46.256608 [debug] [ThreadPool]: dremio adapter: Job State = QUEUED
+[0m11:57:46.508924 [debug] [ThreadPool]: dremio adapter: Job State = COMPLETED
+[0m11:57:46.556941 [debug] [ThreadPool]: dremio adapter: SQL status: 1 in 0.77 seconds
+[0m11:57:46.557273 [debug] [ThreadPool]: On list_$scratch: Close
+[0m11:57:46.557878 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_$scratch, now list_@dremio_no_schema)
+[0m11:57:46.565281 [debug] [ThreadPool]: dremio adapter: Using dremio connection "list_@dremio_no_schema". fetch=True
+[0m11:57:46.565732 [debug] [ThreadPool]: dremio adapter: On list_@dremio_no_schema: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "connection_name": "list_@dremio_no_schema"} */
+
+
+      select (case when position('.' in table_schema) > 0
+              then substring(table_schema, 1, position('.' in table_schema) - 1)
+              else table_schema
+          end) as table_catalog
+          ,table_name
+          ,(case when position('.' in table_schema) > 0
+              then substring(table_schema, position('.' in table_schema) + 1)
+              else 'no_schema'
+          end) as table_schema
+          ,lower(table_type) as table_type
+      from information_schema."tables"
+        where ilike(table_schema, '@dremio')
+      and table_type <> 'system_table'
+
+  
+[0m11:57:46.566134 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:57:46.743017 [debug] [ThreadPool]: dremio adapter: Connected to db: @dremio
+[0m11:57:47.039528 [debug] [ThreadPool]: dremio adapter: Job State = QUEUED
+[0m11:57:47.287052 [debug] [ThreadPool]: dremio adapter: Job State = COMPLETED
+[0m11:57:47.339212 [debug] [ThreadPool]: dremio adapter: SQL status: 2 in 0.77 seconds
+[0m11:57:47.340150 [debug] [ThreadPool]: On list_@dremio_no_schema: ROLLBACK
+[0m11:57:47.340586 [debug] [ThreadPool]: dremio adapter: Handle rollback not implemented.
+[0m11:57:47.340944 [debug] [ThreadPool]: On list_@dremio_no_schema: Close
+[0m11:57:47.341549 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_@dremio_no_schema, now list_$scratch_no_schema)
+[0m11:57:47.344736 [debug] [ThreadPool]: dremio adapter: Using dremio connection "list_$scratch_no_schema". fetch=True
+[0m11:57:47.345160 [debug] [ThreadPool]: dremio adapter: On list_$scratch_no_schema: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "connection_name": "list_$scratch_no_schema"} */
+
+
+      select (case when position('.' in table_schema) > 0
+              then substring(table_schema, 1, position('.' in table_schema) - 1)
+              else table_schema
+          end) as table_catalog
+          ,table_name
+          ,(case when position('.' in table_schema) > 0
+              then substring(table_schema, position('.' in table_schema) + 1)
+              else 'no_schema'
+          end) as table_schema
+          ,lower(table_type) as table_type
+      from information_schema."tables"
+        where ilike(table_schema, '$scratch')
+      and table_type <> 'system_table'
+
+  
+[0m11:57:47.345530 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:57:47.523103 [debug] [ThreadPool]: dremio adapter: Connected to db: @dremio
+[0m11:57:47.810446 [debug] [ThreadPool]: dremio adapter: Job State = QUEUED
+[0m11:57:48.060366 [debug] [ThreadPool]: dremio adapter: Job State = COMPLETED
+[0m11:57:48.125993 [debug] [ThreadPool]: dremio adapter: SQL status: 1 in 0.78 seconds
+[0m11:57:48.127013 [debug] [ThreadPool]: On list_$scratch_no_schema: ROLLBACK
+[0m11:57:48.127436 [debug] [ThreadPool]: dremio adapter: Handle rollback not implemented.
+[0m11:57:48.127791 [debug] [ThreadPool]: On list_$scratch_no_schema: Close
+[0m11:57:48.128833 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e123f78b-2c67-4fa8-90fd-ce971f9c68ed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ad85100>]}
+[0m11:57:48.130834 [debug] [Thread-1 (]: Began running node model.jaffle_shop1.my_first_dbt_model
+[0m11:57:48.131362 [info ] [Thread-1 (]: 1 of 2 START sql table model $scratch.my_first_dbt_model ....................... [RUN]
+[0m11:57:48.131818 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_$scratch_no_schema, now model.jaffle_shop1.my_first_dbt_model)
+[0m11:57:48.132170 [debug] [Thread-1 (]: Began compiling node model.jaffle_shop1.my_first_dbt_model
+[0m11:57:48.138739 [debug] [Thread-1 (]: Writing injected SQL for node "model.jaffle_shop1.my_first_dbt_model"
+[0m11:57:48.139678 [debug] [Thread-1 (]: Began executing node model.jaffle_shop1.my_first_dbt_model
+[0m11:57:48.158769 [debug] [Thread-1 (]: dremio adapter: Using dremio connection "model.jaffle_shop1.my_first_dbt_model". fetch=False
+[0m11:57:48.159060 [debug] [Thread-1 (]: dremio adapter: On model.jaffle_shop1.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "node_id": "model.jaffle_shop1.my_first_dbt_model"} */
+drop table if exists "$scratch"."my_first_dbt_model"
+[0m11:57:48.159297 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:57:48.334532 [debug] [Thread-1 (]: dremio adapter: Connected to db: @dremio
+[0m11:57:48.626146 [debug] [Thread-1 (]: dremio adapter: Job State = METADATA_RETRIEVAL
+[0m11:57:49.122506 [debug] [Thread-1 (]: dremio adapter: Job State = COMPLETED
+[0m11:57:49.123448 [debug] [Thread-1 (]: dremio adapter: rowCount does not exist in job_status payload
+[0m11:57:49.124208 [debug] [Thread-1 (]: dremio adapter: SQL status: OK in 0.96 seconds
+[0m11:57:49.150111 [debug] [Thread-1 (]: Writing runtime sql for node "model.jaffle_shop1.my_first_dbt_model"
+[0m11:57:49.151016 [debug] [Thread-1 (]: dremio adapter: Using dremio connection "model.jaffle_shop1.my_first_dbt_model". fetch=False
+[0m11:57:49.151341 [debug] [Thread-1 (]: dremio adapter: On model.jaffle_shop1.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "node_id": "model.jaffle_shop1.my_first_dbt_model"} */
+
+  
+    
+  
+
+  create table "$scratch"."my_first_dbt_model"
+   
+  
+  
+  
+  
+  as (
+    /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select null as id
+
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+  )
+  
+[0m11:57:49.437671 [debug] [Thread-1 (]: dremio adapter: Job State = METADATA_RETRIEVAL
+[0m11:57:49.688938 [debug] [Thread-1 (]: dremio adapter: Job State = PLANNING
+[0m11:57:49.938062 [debug] [Thread-1 (]: dremio adapter: Job State = RUNNING
+[0m11:57:50.190106 [debug] [Thread-1 (]: dremio adapter: Job State = COMPLETED
+[0m11:57:50.192691 [debug] [Thread-1 (]: dremio adapter: SQL status: 2 in 1.04 seconds
+[0m11:57:50.215953 [debug] [Thread-1 (]: dremio adapter: Using dremio connection "model.jaffle_shop1.my_first_dbt_model". fetch=False
+[0m11:57:50.216441 [debug] [Thread-1 (]: dremio adapter: On model.jaffle_shop1.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "node_id": "model.jaffle_shop1.my_first_dbt_model"} */
+
+  
+
+  create or replace view "@dremio"."my_first_dbt_model" as select *
+          from 
+  "$scratch"."my_first_dbt_model"
+[0m11:57:50.506689 [debug] [Thread-1 (]: dremio adapter: Job State = METADATA_RETRIEVAL
+[0m11:57:52.489568 [debug] [Thread-1 (]: dremio adapter: Job State = COMPLETED
+[0m11:57:52.491870 [debug] [Thread-1 (]: dremio adapter: rowCount does not exist in job_status payload
+[0m11:57:52.492439 [debug] [Thread-1 (]: dremio adapter: SQL status: OK in 2.28 seconds
+[0m11:57:52.511497 [debug] [Thread-1 (]: On model.jaffle_shop1.my_first_dbt_model: ROLLBACK
+[0m11:57:52.511902 [debug] [Thread-1 (]: dremio adapter: Handle rollback not implemented.
+[0m11:57:52.512162 [debug] [Thread-1 (]: On model.jaffle_shop1.my_first_dbt_model: Close
+[0m11:57:52.514222 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e123f78b-2c67-4fa8-90fd-ce971f9c68ed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10850d0d0>]}
+[0m11:57:52.514758 [info ] [Thread-1 (]: 1 of 2 OK created sql table model $scratch.my_first_dbt_model .................. [[32m2[0m in 4.38s]
+[0m11:57:52.515213 [debug] [Thread-1 (]: Finished running node model.jaffle_shop1.my_first_dbt_model
+[0m11:57:52.515861 [debug] [Thread-1 (]: Began running node model.jaffle_shop1.my_second_dbt_model
+[0m11:57:52.516411 [info ] [Thread-1 (]: 2 of 2 START sql view model my_second_dbt_model ................................ [RUN]
+[0m11:57:52.516834 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.jaffle_shop1.my_first_dbt_model, now model.jaffle_shop1.my_second_dbt_model)
+[0m11:57:52.517327 [debug] [Thread-1 (]: Began compiling node model.jaffle_shop1.my_second_dbt_model
+[0m11:57:52.524562 [debug] [Thread-1 (]: Writing injected SQL for node "model.jaffle_shop1.my_second_dbt_model"
+[0m11:57:52.525191 [debug] [Thread-1 (]: Began executing node model.jaffle_shop1.my_second_dbt_model
+[0m11:57:52.531353 [debug] [Thread-1 (]: Writing runtime sql for node "model.jaffle_shop1.my_second_dbt_model"
+[0m11:57:52.531875 [debug] [Thread-1 (]: dremio adapter: Using dremio connection "model.jaffle_shop1.my_second_dbt_model". fetch=False
+[0m11:57:52.532102 [debug] [Thread-1 (]: dremio adapter: On model.jaffle_shop1.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "node_id": "model.jaffle_shop1.my_second_dbt_model"} */
+
+  
+
+  create or replace view "@dremio"."my_second_dbt_model" as -- Use the `ref` function to select from other models
+
+select *
+from "$scratch"."my_first_dbt_model"
+where id = 1
+[0m11:57:52.532301 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:57:52.713622 [debug] [Thread-1 (]: dremio adapter: Connected to db: @dremio
+[0m11:57:53.005671 [debug] [Thread-1 (]: dremio adapter: Job State = METADATA_RETRIEVAL
+[0m11:57:53.255938 [debug] [Thread-1 (]: dremio adapter: Job State = COMPLETED
+[0m11:57:53.257759 [debug] [Thread-1 (]: dremio adapter: rowCount does not exist in job_status payload
+[0m11:57:53.258464 [debug] [Thread-1 (]: dremio adapter: SQL status: OK in 0.73 seconds
+[0m11:57:53.264543 [debug] [Thread-1 (]: dremio adapter: Using dremio connection "model.jaffle_shop1.my_second_dbt_model". fetch=False
+[0m11:57:53.265023 [debug] [Thread-1 (]: dremio adapter: On model.jaffle_shop1.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "node_id": "model.jaffle_shop1.my_second_dbt_model"} */
+drop table if exists "$scratch"."my_second_dbt_model"
+[0m11:57:53.557472 [debug] [Thread-1 (]: dremio adapter: Job State = METADATA_RETRIEVAL
+[0m11:57:53.807094 [debug] [Thread-1 (]: dremio adapter: Job State = COMPLETED
+[0m11:57:53.808585 [debug] [Thread-1 (]: dremio adapter: rowCount does not exist in job_status payload
+[0m11:57:53.809121 [debug] [Thread-1 (]: dremio adapter: SQL status: OK in 0.54 seconds
+[0m11:57:53.816439 [debug] [Thread-1 (]: On model.jaffle_shop1.my_second_dbt_model: ROLLBACK
+[0m11:57:53.817044 [debug] [Thread-1 (]: dremio adapter: Handle rollback not implemented.
+[0m11:57:53.817425 [debug] [Thread-1 (]: On model.jaffle_shop1.my_second_dbt_model: Close
+[0m11:57:53.818078 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e123f78b-2c67-4fa8-90fd-ce971f9c68ed', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b0969f0>]}
+[0m11:57:53.818831 [info ] [Thread-1 (]: 2 of 2 OK created sql view model my_second_dbt_model ........................... [[32mOK[0m in 1.30s]
+[0m11:57:53.819426 [debug] [Thread-1 (]: Finished running node model.jaffle_shop1.my_second_dbt_model
+[0m11:57:53.820726 [debug] [MainThread]: On master: ROLLBACK
+[0m11:57:53.821046 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:57:53.998949 [debug] [MainThread]: dremio adapter: Connected to db: @dremio
+[0m11:57:54.001521 [debug] [MainThread]: dremio adapter: Handle rollback not implemented.
+[0m11:57:54.002151 [debug] [MainThread]: On master: ROLLBACK
+[0m11:57:54.002569 [debug] [MainThread]: dremio adapter: Handle rollback not implemented.
+[0m11:57:54.002939 [debug] [MainThread]: On master: Close
+[0m11:57:54.004084 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:57:54.004430 [debug] [MainThread]: Connection 'model.jaffle_shop1.my_second_dbt_model' was properly closed.
+[0m11:57:54.008030 [info ] [MainThread]: 
+[0m11:57:54.008689 [info ] [MainThread]: Finished running 1 table model, 1 view model in 0 hours 0 minutes and 9.13 seconds (9.13s).
+[0m11:57:54.010082 [debug] [MainThread]: Command end result
+[0m11:57:54.037692 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/pedro.mora/jaffle_shop1/target/manifest.json
+[0m11:57:54.040011 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/pedro.mora/jaffle_shop1/target/semantic_manifest.json
+[0m11:57:54.045403 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/pedro.mora/jaffle_shop1/target/run_results.json
+[0m11:57:54.045706 [info ] [MainThread]: 
+[0m11:57:54.046047 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m11:57:54.046254 [info ] [MainThread]: 
+[0m11:57:54.046472 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m11:57:54.048812 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 9.559801, "process_in_blocks": "0", "process_kernel_time": 0.237537, "process_mem_max_rss": "117653504", "process_out_blocks": "0", "process_user_time": 1.231224}
+[0m11:57:54.049352 [debug] [MainThread]: Command `dbt run` succeeded at 11:57:54.049281 after 9.56 seconds
+[0m11:57:54.049636 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109e15370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ae589b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ae59010>]}
+[0m11:57:54.049886 [debug] [MainThread]: Flushing usage events
+[0m11:57:54.210498 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m09:29:06.765968 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1064d4a40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1082534a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1082531a0>]}
+
+
+============================== 09:29:06.771534 | a2dca83a-14f3-4aab-aa0b-db35484f777b ==============================
+[0m09:29:06.771534 [info ] [MainThread]: Running with dbt=1.9.0
+[0m09:29:06.772064 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/pedro.mora/.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': '/Users/pedro.mora/jaffle_shop1/logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt run', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m09:29:06.897143 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a2dca83a-14f3-4aab-aa0b-db35484f777b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10799a4e0>]}
+[0m09:29:06.922653 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a2dca83a-14f3-4aab-aa0b-db35484f777b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10827dd00>]}
+[0m09:29:06.923352 [info ] [MainThread]: Registered adapter: dremio=1.8.0
+[0m09:29:06.977264 [debug] [MainThread]: checksum: c99e828bba267739642b5a3ce85f17518764ea526e0e6c4fdc649171c1a66bff, vars: {}, profile: , target: , version: 1.9.0
+[0m09:29:07.040831 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m09:29:07.041092 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m09:29:07.058996 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'a2dca83a-14f3-4aab-aa0b-db35484f777b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1080efd10>]}
+[0m09:29:07.091977 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/pedro.mora/jaffle_shop1/target/manifest.json
+[0m09:29:07.093861 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/pedro.mora/jaffle_shop1/target/semantic_manifest.json
+[0m09:29:07.106593 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'a2dca83a-14f3-4aab-aa0b-db35484f777b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108a81fd0>]}
+[0m09:29:07.106849 [info ] [MainThread]: Found 2 models, 4 data tests, 467 macros
+[0m09:29:07.107015 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a2dca83a-14f3-4aab-aa0b-db35484f777b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107d6a9c0>]}
+[0m09:29:07.107873 [info ] [MainThread]: 
+[0m09:29:07.108041 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m09:29:07.108374 [info ] [MainThread]: 
+[0m09:29:07.108712 [debug] [MainThread]: Acquiring new dremio connection 'master'
+[0m09:29:07.109245 [debug] [ThreadPool]: Acquiring new dremio connection 'list_@dremio'
+[0m09:29:07.116424 [debug] [ThreadPool]: dremio adapter: Using dremio connection "list_@dremio". fetch=True
+[0m09:29:07.116649 [debug] [ThreadPool]: dremio adapter: On list_@dremio: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "connection_name": "list_@dremio"} */
+
+    
+    select substring(schema_name, position('.' in schema_name) + 1)
+    from information_schema.schemata
+    where ilike(schema_name, '@dremio.%')
+    union
+    values('no_schema')
+  
+  
+[0m09:29:07.116781 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:29:07.431818 [debug] [ThreadPool]: dremio adapter: Connected to db: @dremio
+[0m09:29:07.727523 [debug] [ThreadPool]: dremio adapter: Job State = PLANNING
+[0m09:29:07.977846 [debug] [ThreadPool]: dremio adapter: Job State = COMPLETED
+[0m09:29:08.042479 [debug] [ThreadPool]: dremio adapter: SQL status: 1 in 0.93 seconds
+[0m09:29:08.043419 [debug] [ThreadPool]: On list_@dremio: Close
+[0m09:29:08.044084 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_@dremio, now list_$scratch)
+[0m09:29:08.046998 [debug] [ThreadPool]: dremio adapter: Using dremio connection "list_$scratch". fetch=True
+[0m09:29:08.047514 [debug] [ThreadPool]: dremio adapter: On list_$scratch: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "connection_name": "list_$scratch"} */
+
+    
+    select substring(schema_name, position('.' in schema_name) + 1)
+    from information_schema.schemata
+    where ilike(schema_name, '$scratch.%')
+    union
+    values('no_schema')
+  
+  
+[0m09:29:08.047812 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m09:29:08.225454 [debug] [ThreadPool]: dremio adapter: Connected to db: @dremio
+[0m09:29:08.518536 [debug] [ThreadPool]: dremio adapter: Job State = PLANNING
+[0m09:29:08.769394 [debug] [ThreadPool]: dremio adapter: Job State = COMPLETED
+[0m09:29:08.818100 [debug] [ThreadPool]: dremio adapter: SQL status: 1 in 0.77 seconds
+[0m09:29:08.818680 [debug] [ThreadPool]: On list_$scratch: Close
+[0m09:29:08.819803 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_$scratch, now list_@dremio_no_schema)
+[0m09:29:08.829285 [debug] [ThreadPool]: dremio adapter: Using dremio connection "list_@dremio_no_schema". fetch=True
+[0m09:29:08.829678 [debug] [ThreadPool]: dremio adapter: On list_@dremio_no_schema: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "connection_name": "list_@dremio_no_schema"} */
+
+
+      select (case when position('.' in table_schema) > 0
+              then substring(table_schema, 1, position('.' in table_schema) - 1)
+              else table_schema
+          end) as table_catalog
+          ,table_name
+          ,(case when position('.' in table_schema) > 0
+              then substring(table_schema, position('.' in table_schema) + 1)
+              else 'no_schema'
+          end) as table_schema
+          ,lower(table_type) as table_type
+      from information_schema."tables"
+        where ilike(table_schema, '@dremio')
+      and table_type <> 'system_table'
+
+  
+[0m09:29:08.829988 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m09:29:09.008626 [debug] [ThreadPool]: dremio adapter: Connected to db: @dremio
+[0m09:29:09.295458 [debug] [ThreadPool]: dremio adapter: Job State = QUEUED
+[0m09:29:09.546375 [debug] [ThreadPool]: dremio adapter: Job State = COMPLETED
+[0m09:29:09.602149 [debug] [ThreadPool]: dremio adapter: SQL status: 2 in 0.77 seconds
+[0m09:29:09.602822 [debug] [ThreadPool]: On list_@dremio_no_schema: ROLLBACK
+[0m09:29:09.603082 [debug] [ThreadPool]: dremio adapter: Handle rollback not implemented.
+[0m09:29:09.603294 [debug] [ThreadPool]: On list_@dremio_no_schema: Close
+[0m09:29:09.603736 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_@dremio_no_schema, now list_$scratch_no_schema)
+[0m09:29:09.606589 [debug] [ThreadPool]: dremio adapter: Using dremio connection "list_$scratch_no_schema". fetch=True
+[0m09:29:09.606910 [debug] [ThreadPool]: dremio adapter: On list_$scratch_no_schema: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "connection_name": "list_$scratch_no_schema"} */
+
+
+      select (case when position('.' in table_schema) > 0
+              then substring(table_schema, 1, position('.' in table_schema) - 1)
+              else table_schema
+          end) as table_catalog
+          ,table_name
+          ,(case when position('.' in table_schema) > 0
+              then substring(table_schema, position('.' in table_schema) + 1)
+              else 'no_schema'
+          end) as table_schema
+          ,lower(table_type) as table_type
+      from information_schema."tables"
+        where ilike(table_schema, '$scratch')
+      and table_type <> 'system_table'
+
+  
+[0m09:29:09.607190 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m09:29:09.790272 [debug] [ThreadPool]: dremio adapter: Connected to db: @dremio
+[0m09:29:10.080356 [debug] [ThreadPool]: dremio adapter: Job State = QUEUED
+[0m09:29:10.331790 [debug] [ThreadPool]: dremio adapter: Job State = COMPLETED
+[0m09:29:10.386565 [debug] [ThreadPool]: dremio adapter: SQL status: 1 in 0.78 seconds
+[0m09:29:10.387589 [debug] [ThreadPool]: On list_$scratch_no_schema: ROLLBACK
+[0m09:29:10.387992 [debug] [ThreadPool]: dremio adapter: Handle rollback not implemented.
+[0m09:29:10.388340 [debug] [ThreadPool]: On list_$scratch_no_schema: Close
+[0m09:29:10.389478 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a2dca83a-14f3-4aab-aa0b-db35484f777b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107d6a9c0>]}
+[0m09:29:10.391403 [debug] [Thread-1 (]: Began running node model.jaffle_shop1.my_first_dbt_model
+[0m09:29:10.392017 [info ] [Thread-1 (]: 1 of 2 START sql table model $scratch.my_first_dbt_model ....................... [RUN]
+[0m09:29:10.392517 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_$scratch_no_schema, now model.jaffle_shop1.my_first_dbt_model)
+[0m09:29:10.392891 [debug] [Thread-1 (]: Began compiling node model.jaffle_shop1.my_first_dbt_model
+[0m09:29:10.401816 [debug] [Thread-1 (]: Writing injected SQL for node "model.jaffle_shop1.my_first_dbt_model"
+[0m09:29:10.404201 [debug] [Thread-1 (]: Began executing node model.jaffle_shop1.my_first_dbt_model
+[0m09:29:10.423852 [debug] [Thread-1 (]: dremio adapter: Using dremio connection "model.jaffle_shop1.my_first_dbt_model". fetch=False
+[0m09:29:10.424151 [debug] [Thread-1 (]: dremio adapter: On model.jaffle_shop1.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "node_id": "model.jaffle_shop1.my_first_dbt_model"} */
+drop table if exists "$scratch"."my_first_dbt_model"
+[0m09:29:10.424362 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m09:29:10.598297 [debug] [Thread-1 (]: dremio adapter: Connected to db: @dremio
+[0m09:29:10.886688 [debug] [Thread-1 (]: dremio adapter: Job State = METADATA_RETRIEVAL
+[0m09:29:11.385135 [debug] [Thread-1 (]: dremio adapter: Job State = COMPLETED
+[0m09:29:11.387106 [debug] [Thread-1 (]: dremio adapter: rowCount does not exist in job_status payload
+[0m09:29:11.387699 [debug] [Thread-1 (]: dremio adapter: SQL status: OK in 0.96 seconds
+[0m09:29:11.420885 [debug] [Thread-1 (]: Writing runtime sql for node "model.jaffle_shop1.my_first_dbt_model"
+[0m09:29:11.421927 [debug] [Thread-1 (]: dremio adapter: Using dremio connection "model.jaffle_shop1.my_first_dbt_model". fetch=False
+[0m09:29:11.422194 [debug] [Thread-1 (]: dremio adapter: On model.jaffle_shop1.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "node_id": "model.jaffle_shop1.my_first_dbt_model"} */
+
+  
+    
+  
+
+  create table "$scratch"."my_first_dbt_model"
+   
+  
+  
+  
+  
+  as (
+    /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select null as id
+
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+  )
+  
+[0m09:29:11.709958 [debug] [Thread-1 (]: dremio adapter: Job State = METADATA_RETRIEVAL
+[0m09:29:11.959700 [debug] [Thread-1 (]: dremio adapter: Job State = PLANNING
+[0m09:29:12.209070 [debug] [Thread-1 (]: dremio adapter: Job State = RUNNING
+[0m09:29:12.958230 [debug] [Thread-1 (]: dremio adapter: Job State = COMPLETED
+[0m09:29:12.960284 [debug] [Thread-1 (]: dremio adapter: SQL status: 2 in 1.54 seconds
+[0m09:29:12.986595 [debug] [Thread-1 (]: dremio adapter: Using dremio connection "model.jaffle_shop1.my_first_dbt_model". fetch=False
+[0m09:29:12.987176 [debug] [Thread-1 (]: dremio adapter: On model.jaffle_shop1.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "node_id": "model.jaffle_shop1.my_first_dbt_model"} */
+
+  
+
+  create or replace view "@dremio"."my_first_dbt_model" as select *
+          from 
+  "$scratch"."my_first_dbt_model"
+[0m09:29:13.272185 [debug] [Thread-1 (]: dremio adapter: Job State = METADATA_RETRIEVAL
+[0m09:29:15.247005 [debug] [Thread-1 (]: dremio adapter: Job State = COMPLETED
+[0m09:29:15.248447 [debug] [Thread-1 (]: dremio adapter: rowCount does not exist in job_status payload
+[0m09:29:15.248927 [debug] [Thread-1 (]: dremio adapter: SQL status: OK in 2.26 seconds
+[0m09:29:15.269353 [debug] [Thread-1 (]: On model.jaffle_shop1.my_first_dbt_model: ROLLBACK
+[0m09:29:15.269767 [debug] [Thread-1 (]: dremio adapter: Handle rollback not implemented.
+[0m09:29:15.270028 [debug] [Thread-1 (]: On model.jaffle_shop1.my_first_dbt_model: Close
+[0m09:29:15.273529 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'a2dca83a-14f3-4aab-aa0b-db35484f777b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108608b30>]}
+[0m09:29:15.274124 [info ] [Thread-1 (]: 1 of 2 OK created sql table model $scratch.my_first_dbt_model .................. [[32m2[0m in 4.88s]
+[0m09:29:15.274599 [debug] [Thread-1 (]: Finished running node model.jaffle_shop1.my_first_dbt_model
+[0m09:29:15.275280 [debug] [Thread-1 (]: Began running node model.jaffle_shop1.my_second_dbt_model
+[0m09:29:15.275893 [info ] [Thread-1 (]: 2 of 2 START sql view model my_second_dbt_model ................................ [RUN]
+[0m09:29:15.276286 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.jaffle_shop1.my_first_dbt_model, now model.jaffle_shop1.my_second_dbt_model)
+[0m09:29:15.276591 [debug] [Thread-1 (]: Began compiling node model.jaffle_shop1.my_second_dbt_model
+[0m09:29:15.283628 [debug] [Thread-1 (]: Writing injected SQL for node "model.jaffle_shop1.my_second_dbt_model"
+[0m09:29:15.284416 [debug] [Thread-1 (]: Began executing node model.jaffle_shop1.my_second_dbt_model
+[0m09:29:15.290362 [debug] [Thread-1 (]: Writing runtime sql for node "model.jaffle_shop1.my_second_dbt_model"
+[0m09:29:15.290838 [debug] [Thread-1 (]: dremio adapter: Using dremio connection "model.jaffle_shop1.my_second_dbt_model". fetch=False
+[0m09:29:15.291061 [debug] [Thread-1 (]: dremio adapter: On model.jaffle_shop1.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "node_id": "model.jaffle_shop1.my_second_dbt_model"} */
+
+  
+
+  create or replace view "@dremio"."my_second_dbt_model" as -- Use the `ref` function to select from other models
+
+select *
+from "$scratch"."my_first_dbt_model"
+where id = 1
+[0m09:29:15.291264 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m09:29:15.467302 [debug] [Thread-1 (]: dremio adapter: Connected to db: @dremio
+[0m09:29:15.757328 [debug] [Thread-1 (]: dremio adapter: Job State = METADATA_RETRIEVAL
+[0m09:29:16.010447 [debug] [Thread-1 (]: dremio adapter: Job State = COMPLETED
+[0m09:29:16.012506 [debug] [Thread-1 (]: dremio adapter: rowCount does not exist in job_status payload
+[0m09:29:16.013552 [debug] [Thread-1 (]: dremio adapter: SQL status: OK in 0.72 seconds
+[0m09:29:16.019032 [debug] [Thread-1 (]: dremio adapter: Using dremio connection "model.jaffle_shop1.my_second_dbt_model". fetch=False
+[0m09:29:16.019487 [debug] [Thread-1 (]: dremio adapter: On model.jaffle_shop1.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.0", "profile_name": "jaffle_shop1", "target_name": "dev", "node_id": "model.jaffle_shop1.my_second_dbt_model"} */
+drop table if exists "$scratch"."my_second_dbt_model"
+[0m09:29:16.304026 [debug] [Thread-1 (]: dremio adapter: Job State = METADATA_RETRIEVAL
+[0m09:29:16.556115 [debug] [Thread-1 (]: dremio adapter: Job State = COMPLETED
+[0m09:29:16.557539 [debug] [Thread-1 (]: dremio adapter: rowCount does not exist in job_status payload
+[0m09:29:16.558011 [debug] [Thread-1 (]: dremio adapter: SQL status: OK in 0.54 seconds
+[0m09:29:16.565447 [debug] [Thread-1 (]: On model.jaffle_shop1.my_second_dbt_model: ROLLBACK
+[0m09:29:16.565965 [debug] [Thread-1 (]: dremio adapter: Handle rollback not implemented.
+[0m09:29:16.566305 [debug] [Thread-1 (]: On model.jaffle_shop1.my_second_dbt_model: Close
+[0m09:29:16.566937 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'a2dca83a-14f3-4aab-aa0b-db35484f777b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108b863c0>]}
+[0m09:29:16.567685 [info ] [Thread-1 (]: 2 of 2 OK created sql view model my_second_dbt_model ........................... [[32mOK[0m in 1.29s]
+[0m09:29:16.568268 [debug] [Thread-1 (]: Finished running node model.jaffle_shop1.my_second_dbt_model
+[0m09:29:16.569707 [debug] [MainThread]: On master: ROLLBACK
+[0m09:29:16.570107 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m09:29:16.748324 [debug] [MainThread]: dremio adapter: Connected to db: @dremio
+[0m09:29:16.750113 [debug] [MainThread]: dremio adapter: Handle rollback not implemented.
+[0m09:29:16.750645 [debug] [MainThread]: On master: ROLLBACK
+[0m09:29:16.751374 [debug] [MainThread]: dremio adapter: Handle rollback not implemented.
+[0m09:29:16.751696 [debug] [MainThread]: On master: Close
+[0m09:29:16.752162 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m09:29:16.752444 [debug] [MainThread]: Connection 'model.jaffle_shop1.my_second_dbt_model' was properly closed.
+[0m09:29:16.752788 [info ] [MainThread]: 
+[0m09:29:16.753193 [info ] [MainThread]: Finished running 1 table model, 1 view model in 0 hours 0 minutes and 9.64 seconds (9.64s).
+[0m09:29:16.754291 [debug] [MainThread]: Command end result
+[0m09:29:16.776481 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/pedro.mora/jaffle_shop1/target/manifest.json
+[0m09:29:16.777978 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/pedro.mora/jaffle_shop1/target/semantic_manifest.json
+[0m09:29:16.783082 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/pedro.mora/jaffle_shop1/target/run_results.json
+[0m09:29:16.783320 [info ] [MainThread]: 
+[0m09:29:16.783614 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m09:29:16.783807 [info ] [MainThread]: 
+[0m09:29:16.784029 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m09:29:16.787342 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 10.170175, "process_in_blocks": "0", "process_kernel_time": 0.285926, "process_mem_max_rss": "117129216", "process_out_blocks": "0", "process_user_time": 1.2726}
+[0m09:29:16.787797 [debug] [MainThread]: Command `dbt run` succeeded at 09:29:16.787732 after 10.17 seconds
+[0m09:29:16.788069 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108a33f50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108252d80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1082534a0>]}
+[0m09:29:16.788309 [debug] [MainThread]: Flushing usage events
+[0m09:29:16.939841 [debug] [MainThread]: An error was encountered while trying to flush usage events
